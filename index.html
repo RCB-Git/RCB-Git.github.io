@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <script src="p5.js"></script>
+  <script src="p5.sound.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <meta charset="utf-8">
+  <script src="libraries/p5.3D.js"></script>
+</head>
+
+<body>
+  <main>
+    <h1 id="Topper">Robert Beck</h1>
+
+    <button type="button" class="collapsible"> About Me </button>
+    <div class="content">
+      <p> biased</p>
+    </div>
+    <br>
+
+    <button type="button" class="collapsible"> </button>
+    <div class="content">
+      <p></p>
+    </div>
+
+    <br> 
+    <br>
+  
+
+
+  </main>
+  <script src="sketch.js"></script>
+
+
+</body>
+
+</html>
+
+<script>
+  var coll = document.getElementsByClassName("collapsible");
+  var i;
+  
+  for (i = 0; i < coll.length; i++) {
+    coll[i].addEventListener("click", function() {
+      this.classList.toggle("active");
+      var content = this.nextElementSibling;
+      if (content.style.display === "block") {
+        content.style.display = "none";
+      } else {
+        content.style.display = "block";
+      }
+    });
+  }
+  </script>
