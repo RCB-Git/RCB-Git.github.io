@@ -1,6 +1,7 @@
 let file;
+
 function preload(){
-file = loadStrings('Rex.txt');
+file = loadStrings('Resources/Rex.txt');
 
 }
 
@@ -37,4 +38,6 @@ function loadvalues(){
 
 
   }
+  
+
   
