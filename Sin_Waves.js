@@ -14,16 +14,16 @@ function draw() {
 
 
 }
-let TState;
+let alpha = 100;
 let PState = 4;
 const numProjects = PState;
-const timeBetween = 5;
+const timeBetween = 12;
 let override = true;
 function Switcher() {
 
-  if ((active.toFixed(0)) % timeBetween == 0) {
+  if (active.toFixed(0) % timeBetween == 0) {
     if (override) {
-      TState = 2;
+      alpha = 0;
       PState++;
       PState %= numProjects;
     }
@@ -36,31 +36,28 @@ function Switcher() {
 
   switch (PState) {
     case 0:
-      //polySin();
+      background(54, 60, 66, alpha);
       polySin();
       break;
     case 1:
-      background(255, 0, 0);
+      background(255, 0, 0, alpha);
       break;
     case 2:
-      background(0, 255, 0);
+      background(0, 255, 0, alpha);
       break;
     case 3:
-      background(0, 0, 255);
+      background(0, 0, 255, alpha);
       break;
 
   }
   pop();
+  if (alpha != 100)
+    alpha += .03;
 
-  if (TState > 0) {
-    background(255, 255, 255, 25);
-    TState -= -.01;
-  }
 
 }
 
 function polySin() {
-  background(54, 60, 66, 15);
   push();
   strokeWeight(2)
   stroke(170);
@@ -80,7 +77,3 @@ function polySin() {
   pop();
 
 }
-
-
-
-
