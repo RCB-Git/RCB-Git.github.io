@@ -4,7 +4,11 @@ html, body {
 canvas {
   display: block;
 }
+#arduino_video:hover 
+{
 
+
+}
 .collapsible {
   background-color: #777;
   color: white;
